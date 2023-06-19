@@ -16,13 +16,14 @@ int main(int argc, char const *argv[])
         printf("Ingrese los datos del alumno %d:\n", i + 1);
 
         printf("Nombre: \n");
-        gets(alumnos[i].nombre);
+        gets(alumnos[i].nombre, sizeof(alumnos[i].nombre), stdin); /*es una expresión que devuelve el tamaño
+         en bytes del miembro 'nombre' del elemento 'i' del arreglo 'alumnos'*/);
 
         printf("Dirreccion:  \n");
-        gets(alumnos[i].direccion);
+        gets(alumnos[i].direccion, sizeof(alumnos[i].direccion), stdin);
 
         printf("Carrera:  \n");
-        gets(alumnos[i].direccion);
+        gets(alumnos[i].carrera,  sizeof(alumnos[i].carrera), stdin);
 
         printf("Edad:  \n");
         scanf("&d", alumnos[i].edad);
