@@ -1,5 +1,6 @@
 #include <stdio.h>
-{struct alumno
+
+struct alumno
 {
     char nombre[20];
     char direccion[20];
@@ -7,7 +8,9 @@
     int edad;
     float promedio;
 };
+
 int main(int argc, char const *argv[])
+{
     // Hacemos un arreglo para los 5 alumnos
     struct alumno alumnos[5];
 
@@ -16,20 +19,20 @@ int main(int argc, char const *argv[])
         printf("Ingrese los datos del alumno %d:\n", i + 1);
 
         printf("Nombre: \n");
-        gets(alumnos[i].nombre, sizeof(alumnos[i].nombre), stdin); /*es una expresión que devuelve el tamaño
-         en bytes del miembro 'nombre' del elemento 'i' del arreglo 'alumnos'*/);
+        fgets(alumnos[i].nombre, sizeof(alumnos[i].nombre), stdin); /*es una expresión que devuelve el tamaño
+         en bytes del miembro 'nombre' del elemento 'i' del arreglo 'alumnos'*/
 
-        printf("Dirreccion:  \n");
-        gets(alumnos[i].direccion, sizeof(alumnos[i].direccion), stdin);
+        printf("Dirección:  \n");
+        fgets(alumnos[i].direccion, sizeof(alumnos[i].direccion), stdin);
 
         printf("Carrera:  \n");
-        gets(alumnos[i].carrera,  sizeof(alumnos[i].carrera), stdin);
+        fgets(alumnos[i].carrera, sizeof(alumnos[i].carrera), stdin);
 
         printf("Edad:  \n");
-        scanf("&d", alumnos[i].edad);
+        scanf("%d", &alumnos[i].edad);
 
         printf("Promedio:  \n");
-        scanf("&d", alumnos[i].promedio);
+        scanf("%f", &alumnos[i].promedio);
         printf("\n");
         fflush(stdin);
     }
@@ -41,18 +44,19 @@ int main(int argc, char const *argv[])
         printf("Nombre: \n");
         puts(alumnos[i].nombre);
         printf("\n");
-        printf("Dirreccion:  \n");
+
+        printf("Dirección:  \n");
         puts(alumnos[i].direccion);
-        printf("\n");
-        printf("Carrera:  \n");
-        puts(alumnos[i].direccion);
-        printf("\n");
-        printf("Edad:  \n %d", alumnos[i].edad);
         printf("\n");
 
-        printf("Promedio:  \n %.2f", alumnos[i].promedio);
+        printf("Carrera:  \n");
+        puts(alumnos[i].carrera);
+        printf("\n");
+
+        printf("Edad:  \n%d\n", alumnos[i].edad);
+
+        printf("Promedio:  \n%.2f\n", alumnos[i].promedio);
     }
-   
-    
+
     return 0;
 }
