@@ -21,12 +21,15 @@ int main(int argc, char const *argv[])
         printf("Nombre: \n");
         fgets(alumnos[i].nombre, sizeof(alumnos[i].nombre), stdin); /*es una expresión que devuelve el tamaño
          en bytes del miembro 'nombre' del elemento 'i' del arreglo 'alumnos'*/
+        getchar(); // Consumir carácter de nueva línea adicional
 
         printf("Dirección:  \n");
         fgets(alumnos[i].direccion, sizeof(alumnos[i].direccion), stdin);
+        getchar(); // Consumir carácter de nueva línea adicional
 
         printf("Carrera:  \n");
         fgets(alumnos[i].carrera, sizeof(alumnos[i].carrera), stdin);
+        getchar(); // Consumir carácter de nueva línea adicional
 
         printf("Edad:  \n");
         scanf("%d", &alumnos[i].edad);
